@@ -1,0 +1,11 @@
+<cls:>{{super cls}} mod_doc</cls:>
+
+<zone0:>
+    <widget is="doc.cmp.navigation.search.Form" tabs-model="{{tabsModel}}" api="{{=api}}"/>
+    
+    <widget is="doc.cmp.navigation.Tree" tabs-model="{{tabsModel}}" api="{{=api}}"/>
+</zone0:>
+
+<zone1:>
+    <widget is="doc.cmp.main.Main" tabs-model="{{tabsModel}}" api="{{=api}}"/>
+</zone1:>

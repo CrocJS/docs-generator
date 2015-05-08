@@ -1,0 +1,26 @@
+
+/* g-text */
+.g-text {
+    
+    }
+    .presto .g-text {
+        white-space: pre-wrap;
+        }
+
+/* Is expandable */
+.g-text.is_expandable {
+    max-height: 144px;
+    overflow: hidden;
+    position: relative;
+    -moz-transition: max-height 0.1s ease;
+    -webkit-transition: max-height 0.1s ease;
+    transition: max-height 0.1s ease;
+    }
+    /* State expanded */
+    .g-text.is_expandable.state_expanded {
+        max-height: none;
+        }
+
+
+
+

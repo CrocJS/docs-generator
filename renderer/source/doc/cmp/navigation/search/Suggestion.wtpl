@@ -1,0 +1,39 @@
+<itemContent:>
+    {{with api.map[@item.object] as #object}}
+    {{with @item.type === 'class' ? #object.packageName : @item.object as #ns}}
+    {{with @item.type === 'class' ? #object.name : @item.name as #name}}
+        <div class="g-icon {{=doc.Helper.getIconByNode(@item, api.map)}}">
+            <span class="g-icon-h"><span class="g-icon-item"></span></span>
+            
+            <div class="g-icon-text">
+                <div>{{croc.utils.strUcFirst(@item.type)}} <i>{{=*v.higlightLabel(#name)}}</i></div>
+                <div class="g-font size_11 color_gray">
+                    {{if #ns}}{{=*v.higlightLabel(#ns)}}{{else}}&nbsp;{{/if}}
+                </div>
+            </div>
+        </div>
+    {{/with}}
+    {{/with}}
+    {{/with}}
+</itemContent:>
+
+<top:>
+    <div class="b-suggestion-filter g-clearfix">
+        {{if !allTypesSelected}}
+            <span class="g-pseudo" style="float: right" on-click="selectAllTypes()"><span class="g-pseudo-h">Select all</span></span>
+        {{/if}}
+        {{each types as #type}}
+            <span class="b-suggestion-filter-button{{if filterType[#type]}} state_active{{/if}}"
+                title="{{=croc.utils.strPluralize(#type)}}"
+                on-click="toggleType(#type)">
+                <span class="g-icon set_api mod_{{=#type}}">
+                    <span class="g-icon-h"><span class="g-icon-item"></span></span>
+                </span>
+            </span>
+        {{/each}}
+    </div>
+</top:>
+
+<noItems:>
+    <div class="b-suggestion-error">No items found.</div>
+</noItems:>

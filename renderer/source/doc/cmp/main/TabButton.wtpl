@@ -1,0 +1,11 @@
+<index:>
+    <div on-click="v.click($event)" on-mousedown="v.mousedown($event)">
+        <virtualView is="content" content="{{@content}}"/>
+    </div>
+</index:>
+
+<cls:><view is="croc.cmp.Widget:cls"/> b-main-tab-cell cell_button{{if active}} state_active{{/if}}</cls:>
+
+<content:>
+    {{if text}}{{text}}{{else}}{{@content}}{{/if}}
+</content:>

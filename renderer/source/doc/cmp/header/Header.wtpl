@@ -1,0 +1,21 @@
+<index:>
+    <div class="b-header-toolbar scheme_black">
+
+        <!--
+        <div class="b-header-toolbar-line side_right">
+            <span class="b-header-toolbar-line-item">text</span>
+            <a href="#" class="b-header-toolbar-line-item">item</a>
+            <a href="#" class="b-header-toolbar-line-item">Help</a>
+        </div>
+
+        <div class="b-header-toolbar-nav"></div>-->
+
+        <div class="b-header-toolbar-line side_left">
+            <div class="b-header-toolbar-line-item">
+                <a href="#"><img src="/d/i/blocks/b-header-toolbar/sotmarket-logo.png" alt="Сотмаркет"></a>
+            </div>
+            <span class="b-header-toolbar-line-item">{{title}}</span>
+        </div>
+
+    </div>
+</index:>

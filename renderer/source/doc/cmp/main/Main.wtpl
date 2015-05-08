@@ -1,0 +1,15 @@
+<index:>
+    <div>
+
+        <widget is="doc.cmp.main.Tabs" tabs-model="{{tabsModel}}"/>
+        <!-- сделать membersView одним на все страницы -->
+        {{each tabsModel.tabs as #tab}}
+            <widget is="{{=#tab.widget}}"
+                tabs-model="{{tabsModel}}"
+                tab="{{#tab}}"
+                api="{{=api}}"
+                members-view="{{=_.clone(membersView)}}"
+                shown="{{#tab.active}}"/>
+        {{/each}}
+    </div>
+</index:>

@@ -1,0 +1,10 @@
+{
+    "name"        : "sotmarket/docs-generator",
+    "type"        : "library",
+    "description" : "Генератор документации",
+    "authors"     : [{
+        "name"  : "Артём Бахарев",
+        "email" : "a.bakharev@sotmarket.ru",
+        "role"  : "Developer"
+    }]
+}

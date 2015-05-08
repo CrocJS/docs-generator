@@ -1,0 +1,24 @@
+/* l-html */
+.l-html,
+.l-body {
+    height: 100%;
+    }
+.l-html {
+    overflow-x: auto;
+    overflow-y: scroll;
+    }
+
+/* page */
+.l-page {
+    padding-top: 48px;
+    min-width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    }
+
+
+

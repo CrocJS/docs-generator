@@ -1,0 +1,26 @@
+{
+  "name": "crocDoc",
+  "version": "1.0.1",
+  "dependencies": {
+    "commander": "1.3.2",
+    "crocodile-js": "git+ssh://gitlab@gitlab.sotmarket.ru:522/front-office/crocjs.git",
+    "derby": "git+https://github.com/mrThomasTeller/derby.git",
+    "esprima": "^1.2.3",
+    "gift": "^0.5.0",
+    "glob": "^4.3.5",
+    "html-entities": "^1.1.2",
+    "lodash": "^3.3.0",
+    "mkdirp": "^0.5.0",
+    "ncp": "0.6.0",
+    "object-path": "^0.8.1",
+    "q": "^1.1.2",
+    "resolve": "^1.1.6",
+    "rimraf": "^2.2.8",
+    "tmp": "0.0.24"
+  },
+  "devDependencies": {
+    "serve-static": "^1.7.1",
+    "express": "^4.10.4",
+    "chokidar": "^0.12.5"
+  }
+}

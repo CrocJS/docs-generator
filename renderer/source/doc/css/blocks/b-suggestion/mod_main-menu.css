@@ -1,0 +1,32 @@
+.b-suggestion.mod_main-menu {
+    border-radius: 0 0 3px 3px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+    border: none;
+    min-width: 150px;
+    z-index: 99 !important;
+    }
+    .b-suggestion.mod_main-menu .b-suggestion-item.state_active,
+    .b-suggestion.mod_main-menu .b-suggestion-item:hover {
+        background-color: #ebeced;
+        }
+        .b-suggestion.mod_main-menu.hover_false .b-suggestion-item.state_active,
+        .b-suggestion.mod_main-menu.hover_false .b-suggestion-item:hover {
+            background-color: transparent;
+            cursor: default;
+            }
+    .b-suggestion.mod_main-menu .b-suggestion-item .g-pseudo {
+        margin: -4px -8px;
+        padding: 4px 8px;
+        }
+    .b-suggestion.mod_main-menu .b-suggestion-item .g-pseudo,
+    .b-suggestion.mod_main-menu .b-suggestion-item .g-pseudo-h,
+    .b-suggestion.mod_main-menu .b-suggestion-item a {
+        border: none;
+        display: block;
+        text-decoration: none;
+        }
+        .b-suggestion.mod_main-menu .b-suggestion-item:hover .g-pseudo,
+        .b-suggestion.mod_main-menu .b-suggestion-item:hover .g-pseudo-h,
+        .b-suggestion.mod_main-menu .b-suggestion-item:hover a {
+            color: #000 !important;
+            }

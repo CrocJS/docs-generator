@@ -1,0 +1,19 @@
+<index:>
+    <form action="#" class="b-side-search b-form">
+        <div class="b-form-row">
+            <widget is="croc.cmp.form.field.TextField" placeholder="Search" identifier="field">
+                <passView is="cellsAfter">
+                    <view is="croc.cmp.form.field.TextField:cell">
+                        <div class="b-input-search"></div>
+                    </view>
+                </passView>
+            </widget>
+            {{client}}
+                <widget is="doc.cmp.navigation.search.Suggestion"
+                    field="{{=getItem('field')}}"
+                    api="{{=api}}"
+                    on-choose="selectItem($args[0])"/>
+            {{/client}}
+        </div>
+    </form>
+</index:>

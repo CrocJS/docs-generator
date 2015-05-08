@@ -1,0 +1,29 @@
+<content:>
+    <view is="treeNodes" nodes="{{tree}}"/>
+</content:>
+
+<treeNodes:>
+    <div class="b-side-nav-list level_{{=@level || 'root'}}">
+        {{each @nodes as #node}}
+        {{if !#node.rejected}}
+            {{with v.hasNonRejected(#node.items) as #hasItems}}
+                <div class="b-side-nav-list-item{{if !#node.object}} tree_node{{/if}}{{if #node.expanded}} state_expanded{{/if}}{{if #node.active}} state_active js-active-node{{/if}}"
+                    on-click="v.clickNode($at(#node)), $stop($event)">
+
+                    <div class="b-side-nav-list-item-h{{if #hasItems}} g-icon set_arrow scheme_black size_2 dir_{{if #node.expanded}}ttb{{else}}ltr{{/if}}{{/if}}">
+                        {{if #hasItems}}<span class="g-icon-h"><span class="g-icon-item"></span></span>{{/if}}
+                        <span class="g-icon {{=doc.Helper.getIconByNode(#node, api.map)}}">
+                            <span class="g-icon-h"><span class="g-icon-item"></span></span>
+                            <span class="g-icon-text">{{=*v.makeNodeName(#node)}}</span>
+                        </span>
+                    </div>
+                    <!-- todo report bug -->
+                    {{if #node.expanded}}{{if #hasItems}}
+                        <view is="treeNodes" level="{{=@level ? @level + 1 : 1}}" nodes="{{#node.items}}"/>
+                    {{/if}}{{/if}}
+                </div>
+            {{/with}}
+        {{/if}}
+        {{/each}}
+    </div>
+</treeNodes:>

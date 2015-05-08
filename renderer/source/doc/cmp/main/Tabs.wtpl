@@ -1,0 +1,41 @@
+<index:>
+    <div class="b-main-tab">
+        <div class="b-main-tab-h">
+            <div class="b-main-tab-cell">
+                <div class="b-main-tab-list" on-create="saveEl($at(_tabsList), $element)">
+                    {{each tabsModel.tabs as #tab}}
+                        <div class="b-main-tab-list-item{{if #tab.permanent}} permanent_true{{/if}}{{if #tab.active}} state_active{{/if}}"
+                            on-click="m.tabsModel.setActiveTab(#tab)">
+                            {{unless #tab.permanent}}
+                                <div class="b-main-tab-list-item-close" on-click="m.tabsModel.closeTab(#tab), $stop($event)"></div>
+                            {{/unless}}
+                            <span class="b-main-tab-list-item-h g-icon {{=#tab.icon}}">
+                                <span class="g-icon-h"><span class="g-icon-item"></span></span>
+                                {{if #tab.title}}
+                                    <span class="g-icon-text">{{=#tab.title}}</span>
+                                {{/if}}
+                            </span>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+            <widget is="doc.cmp.main.TabButton" style="{{unless moreButton}}visibility: hidden;{{/unless}}">
+                <span class="g-icon set_api mod_forward">
+                    <span class="g-icon-h"><span class="g-icon-item"></span></span>
+                </span>
+                {{client}}
+                    <widget is="croc.cmp.list.Menu" class="mod_tabs-menu" h-align="right" model="{{menuTabs}}"
+                        on-item-click="m.tabsModel.setActiveTab($args[0]), $widget.close()">
+                        <passView is="itemContent">
+                            <span class="g-icon {{=@item.icon}}">
+                                <span class="g-icon-h"><span class="g-icon-item"></span></span>
+                                <span class="g-icon-text">{{=@item.title}}</span>
+                            </span>
+                            <span class="b-suggestion-item-remove" on-click="pm.tabsModel.closeTab(@item), $stop($event)"></span>
+                        </passView>
+                    </widget>
+                {{/client}}
+            </widget>
+        </div>
+    </div>
+</index:>

@@ -1,0 +1,45 @@
+.b-suggestion.mod_api {
+    min-width: 280px;
+    }
+    .b-suggestion.mod_api .b-suggestion-filter {
+        padding: 8px;
+        background: #f5f6f7;
+        border-bottom: 1px solid #dadbdc;
+        line-height: 22px;
+        margin-bottom: -1px;
+        position: relative;
+        z-index: 1;
+        }
+        .b-suggestion.mod_api .b-suggestion-item.state_active,
+        .b-suggestion.mod_api .b-suggestion-item:hover {
+            background-color: #ebeced;
+            }
+        .b-suggestion.mod_api .b-suggestion-filter-button {
+            display: inline-block;
+            margin-right: 2px;
+            width: 20px;
+            height: 20px;
+            border: 1px solid transparent;
+            border-radius: 2px;
+            cursor: pointer;
+            text-align: center;
+            line-height: 20px;
+            }
+            .b-suggestion.mod_api .b-suggestion-filter-button.state_active {
+                background: #fff;
+                border-color: #ff6500;
+                }
+            .b-suggestion.mod_api .b-suggestion-filter-button.state_active:hover {
+                box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+                }
+            .b-suggestion.mod_api .b-suggestion-filter-button .g-icon {
+                -webkit-filter: grayscale(1);
+                filter: grayscale(1);
+                opacity: 0.5;
+                }
+            .b-suggestion.mod_api .b-suggestion-filter-button.state_active .g-icon,
+            .b-suggestion.mod_api .b-suggestion-filter-button:hover .g-icon {
+                -webkit-filter: none;
+                filter: none;
+                opacity: 1;
+                }
