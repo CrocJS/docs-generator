@@ -1,7 +1,7 @@
 croc.View.define('doc.cmp.info.Info.View', {
     
     construct: function() {
-        doc.cmp.info.Info.View.superclass.__construct__.apply(this, arguments);
+        doc.cmp.info.Info.View.superclass.construct.apply(this, arguments);
         this.__apiMap = this._model.get('api.map');
         this.__desc = this._model.get('desc');
     },

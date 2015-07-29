@@ -2,7 +2,7 @@
  * todo убирать selection при закрытии
  */
 croc.Class.define('doc.cmp.navigation.search.Suggestion', {
-    extend: croc.cmp.form.suggestion.Default,
+    extend: croc.cmp.form.suggestion.Suggestion,
     
     options: {
         /**

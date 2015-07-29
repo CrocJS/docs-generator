@@ -38,7 +38,7 @@ croc.Class.define('doc.data.TabsModel', {
             member: null
         }, options.data);
         
-        doc.data.TabsModel.superclass.__construct__.apply(this, arguments);
+        doc.data.TabsModel.superclass.construct.apply(this, arguments);
     },
     
     members: {

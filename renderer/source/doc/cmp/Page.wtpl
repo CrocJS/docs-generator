@@ -1,4 +1,4 @@
-<cls:>{{super cls}} mod_doc</cls:>
+<cls:><super/> mod_doc</cls:>
 
 <zone0:>
     <widget is="doc.cmp.navigation.search.Form" tabs-model="{{tabsModel}}" api="{{=api}}"/>

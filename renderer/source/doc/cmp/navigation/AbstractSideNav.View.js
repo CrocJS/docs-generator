@@ -2,7 +2,7 @@ croc.View.define('doc.cmp.navigation.AbstractSideNav.View', {
     type: 'abstract',
     
     construct: function() {
-        doc.cmp.navigation.AbstractSideNav.View.superclass.__construct__.apply(this, arguments);
+        doc.cmp.navigation.AbstractSideNav.View.superclass.construct.apply(this, arguments);
         this.updateScroll = this.debounce(this.updateScroll, this);
         this._widget.on('resize', this.updateScroll, this);
     },
