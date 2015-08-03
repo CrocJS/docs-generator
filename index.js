@@ -19,6 +19,7 @@ var writeFile = Q.denodeify(fs.writeFile);
 program
     .option('-g, --git [git]', 'git repository')
     .option('-p, --path [path]', 'path to croc.js', path.join(process.cwd(), 'croc.js'))
+    .option('-c, --croc', 'documentation for crocodile js')
     .option('-o, --output [output]', 'path for generated viewer', path.resolve)
     .option('-b, --branch [branch]', 'source version', 'master')
     .option('-d, --data', 'generate data for node version')
@@ -45,7 +46,7 @@ if (program.git) {
 
 promise = promise
     .then(function() {
-        if (program.path === 'croc') {
+        if (program.croc) {
             program.path = path.join(__dirname, 'node_modules/crocodile-js/croc.js');
         }
         else {
