@@ -1,6 +1,6 @@
 <index:>
-    <div class="b-side-nav g-scrollable" on-create="v.setUpScrollable($element)">
-        <div class="b-side-nav-h g-scrollable-h">
+    <div class="b-side-nav b-scrollable" on-create="v.setUpScrollable($element)">
+        <div class="b-side-nav-h b-scrollable-h">
             <virtualView is="content"/>
         </div>
     </div>

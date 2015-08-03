@@ -64,16 +64,16 @@ croc.View.define('doc.cmp.info.Info.View', {
             }
             
             if (!segments[1] && !options.section && segments[0] === this.__desc.qualifiedName) {
-                return '<span title="' + title + '" class="g-code">' + symbol + '</span>';
+                return '<span title="' + title + '" class="b-code">' + symbol + '</span>';
             }
-            return '<span title="' + title + '" class="g-pseudo g-link g-code js-page-symbol" data-symbol="' + segments.join('!') + '">' +
-                '<span class="g-pseudo-h">' + symbol + '</span>' +
+            return '<span title="' + title + '" class="b-pseudolink g-link b-code js-page-symbol" data-symbol="' + segments.join('!') + '">' +
+                '<span class="b-pseudolink-h">' + symbol + '</span>' +
                 '</span>';
         },
         
         makeDefinedLink: function(member) {
             if (!member.inherited && !member.included) {
-                return '<span class="g-code">' + this.__desc.name + '</span>';
+                return '<span class="b-code">' + this.__desc.name + '</span>';
             }
             var cls = member.inherited || member.included;
             return this.makeLink(cls + '#' + member.name, {omitMember: true, section: member.section});

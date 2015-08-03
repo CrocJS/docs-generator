@@ -27,7 +27,7 @@
         </div>
     </div>
     
-    <div class="b-main-general g-clearfix">
+    <div class="b-main-general b-clearfix">
         
         {{if desc.parents || desc.implements || desc.includes}}
             <div class="b-main-info">
@@ -69,12 +69,12 @@
         {{/if}}
         
         <!-- breadcrumbs -->
-        <div class="b-breadcrumbs g-code">
+        <div class="b-breadcrumbs b-code">
             {{=desc.packageName}}
         </div>
         
-        <div class="b-title g-ui margin_100">
-            <span class="g-font size_4">{{=definer}} <a style="{{if desc.type === 'static'}}font-style: italic;{{/if}}" target="_blank" href="{{=desc.source}}">{{=desc.name}}</a></span>
+        <div class="b-title b-ui margin_100">
+            <span class="b-font size_27">{{=definer}} <a style="{{if desc.type === 'static'}}font-style: italic;{{/if}}" target="_blank" href="{{=desc.source}}">{{=desc.name}}</a></span>
         </div>
         
         {{if desc.description}}
@@ -106,8 +106,8 @@
                 <span class="g-icon set_api mod_{{=#section}}">
                     <span class="g-icon-h"><span class="g-icon-item"></span></span>
                     <span class="g-icon-text">
-                        {{=croc.utils.strUcFirst(croc.utils.strPluralize(#section)) + ' '}}
-                        <span class="g-font color_gray">{{sections[#section].length}}</span>
+                        {{=croc.utils.strUcFirst(croc.utils.strPluralize(#section))}}
+                        <span class="b-font color_gray">{{sections[#section].length}}</span>
                     </span>
                 </span>
                 {{client}}
@@ -175,9 +175,9 @@
 <members:>
     {{if @members}}{{with @expanded || filterString as #expanded}}
         <div class="b-main-members">
-            <div class="b-main-members-head g-font size_8 g-icon set_arrow scheme_black size_2 dir_{{if #expanded}}ttb{{else}}ltr{{/if}}"
+            <div class="b-main-members-head b-font size_18 g-icon set_arrow scheme_black size_2 dir_{{if #expanded}}ttb{{else}}ltr{{/if}}"
                 on-click="toggle($at(@expanded))">
-                <div class="b-main-members-head-defined g-font color_gray size_10">Defined by</div>
+                <div class="b-main-members-head-defined b-font color_gray size_13">Defined by</div>
                 <span class="g-icon-h"><span class="g-icon-item"></span></span>
                 <span class="g-icon set_api mod_{{=@section}}">
                     <span class="g-icon-h"><span class="g-icon-item"></span></span>
@@ -202,10 +202,10 @@
             <div class="b-main-members-item-head{{if @member.expandable}} g-icon set_arrow scheme_black size_1 stand_outside dir_{{if @member.expanded}}ttb{{else}}ltr{{/if}}{{/if}}">
                 {{if @member.expandable}}<span class="g-icon-h"><span class="g-icon-item"></span></span>{{/if}}
                 <div class="b-main-members-item-head-defined">{{=*v.makeDefinedLink(@member)}}</div>
-                <a class="b-main-members-item-head-name g-code" target="_blank" href="{{=@member.source}}" on-click="$stop($event)">
+                <a class="b-main-members-item-head-name b-code" target="_blank" href="{{=@member.source}}" on-click="$stop($event)">
                     {{*v.highlight(@member.name, filterString)}}
                 </a>
-                {{if @member.type || @member.returns}} : <span class="g-code">{{=*v.formatType(@member.type || @member.returns)}}</span>{{/if}}
+                {{if @member.type || @member.returns}}: <span class="b-code">{{=*v.formatType(@member.type || @member.returns)}}</span>{{/if}}
             </div>
             
             {{if @member.description}}
@@ -218,19 +218,19 @@
                 <div class="b-main-members-item-info js-member-stopClick">
                     {{if @member.param}}
                         <div class="b-main-members-item-info-section">
-                            <div style="font-weight: bold" class="g-ui margin_050">Parameters</div>
+                            <div style="font-weight: bold" class="b-ui margin_050">Parameters</div>
                             <ul class="b-main-members-item-info-param-list">
                                 {{ueach @member.param as #param}}
                                     <li class="b-main-members-item-info-param-item">
                                         <div style="{{if #param.optional}}font-style: italic;{{/if}}">
-                                            <span class="g-code">{{#param.name}}</span>
-                                            {{if #param.type}} : <span class="g-code">{{=*v.formatType(#param.type)}}</span>{{/if}}
+                                            <span class="b-code">{{#param.name}}</span>
+                                            {{if #param.type}} : <span class="b-code">{{=*v.formatType(#param.type)}}</span>{{/if}}
                                         </div>
                                         {{if #param.description}}
                                             <div>{{=*v.formatText(#param.description)}}</div>
                                         {{/if}}
                                         {{if #param.defaultValue}}
-                                            <div style="margin-top: 5px">Defaults to: <span class="g-code">{{=#param.defaultValue}}</span></div>
+                                            <div style="margin-top: 5px">Defaults to: <span class="b-code">{{=#param.defaultValue}}</span></div>
                                         {{/if}}
                                     </li>
                                 {{/ueach}}
@@ -239,7 +239,7 @@
                     {{/if}}
                     {{if @member.requiredBy}}
                         <div class="b-main-members-item-info-section">
-                            <div style="font-weight: bold" class="g-ui margin_050">Required by</div>
+                            <div style="font-weight: bold" class="b-ui margin_050">Required by</div>
                             {{ueach @member.requiredBy as #iface, #i}}
                                 {{=*v.makeLink(#iface + '#' + @member.name, {section: @member.section})}}{{=$join(', ', @member.requiredBy, #i)}}
                             {{/ueach}}
@@ -252,7 +252,7 @@
                     {{/if}}
                     {{if @member.section === 'property'}}
                         <div class="b-main-members-item-info-section">
-                            <div style="font-weight: bold" class="g-ui margin_050">Generates</div>
+                            <div style="font-weight: bold" class="b-ui margin_050">Generates</div>
                             {{if @member.getter}}
                                 <div>getter: {{=*v.propertyPart('get', @member)}}</div>
                             {{/if}}

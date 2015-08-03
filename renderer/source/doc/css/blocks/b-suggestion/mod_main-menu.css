@@ -14,19 +14,19 @@
             background-color: transparent;
             cursor: default;
             }
-    .b-suggestion.mod_main-menu .b-suggestion-item .g-pseudo {
+    .b-suggestion.mod_main-menu .b-suggestion-item .b-pseudolink {
         margin: -4px -8px;
         padding: 4px 8px;
         }
-    .b-suggestion.mod_main-menu .b-suggestion-item .g-pseudo,
-    .b-suggestion.mod_main-menu .b-suggestion-item .g-pseudo-h,
+    .b-suggestion.mod_main-menu .b-suggestion-item .b-pseudolink,
+    .b-suggestion.mod_main-menu .b-suggestion-item .b-pseudolink-h,
     .b-suggestion.mod_main-menu .b-suggestion-item a {
         border: none;
         display: block;
         text-decoration: none;
         }
-        .b-suggestion.mod_main-menu .b-suggestion-item:hover .g-pseudo,
-        .b-suggestion.mod_main-menu .b-suggestion-item:hover .g-pseudo-h,
+        .b-suggestion.mod_main-menu .b-suggestion-item:hover .b-pseudolink,
+        .b-suggestion.mod_main-menu .b-suggestion-item:hover .b-pseudolink-h,
         .b-suggestion.mod_main-menu .b-suggestion-item:hover a {
             color: #000 !important;
             }
