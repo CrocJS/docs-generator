@@ -45,7 +45,12 @@ if (program.git) {
 
 promise = promise
     .then(function() {
-        program.path = path.normalize(program.path);
+        if (program.path === 'croc') {
+            program.path = path.join(__dirname, 'node_modules/crocodile-js/croc.js');
+        }
+        else {
+            program.path = path.resolve(process.cwd(), program.path);
+        }
         var confDir = program.confDir = path.dirname(program.path);
         
         config = require(program.path);

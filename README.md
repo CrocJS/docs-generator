@@ -3,6 +3,9 @@ npm install
 cd renderer
 bower install
 
+Документация на crocodile-js (код берётся из node_modules)
+node index.js -p croc -o ../docv
+
 Документация из локальной директории
 node index.js -p ~/work/projects/www/front/croc.js -o ../docv
 

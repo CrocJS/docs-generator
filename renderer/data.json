@@ -12905,7 +12905,7 @@
             "name": "Widget",
             "qualifiedName": "croc.cmp.Widget",
             "packageName": "croc.cmp",
-            "description": "Test Базовый класс для всех виджетов, которые имеют привязку к одному единственному элементу",
+            "description": "Базовый класс для всех виджетов, которые имеют привязку к одному единственному элементу",
             "code": [
                 "https://gitlab.sotmarket.ru/front-office/crocjs/blob/master/source/croc/cmp/Widget/index.js",
                 10
